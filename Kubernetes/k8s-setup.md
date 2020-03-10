@@ -31,7 +31,7 @@
     chmod +x kops-linux-amd64
     sudo mv kops-linux-amd64 /usr/local/bin/kops
     ```
-1. Create a Route53 private hosted zone (you can create Public hosted zone if you have a domain)
+1. Create a Route53 private hosted zone (you can create Public hosted zone if you have a domain). This DNS name and cluster name should be same.
 1. create an S3 bucket 
    ```sh
     aws s3 mb s3://dev.k8s.valaxy.in
@@ -48,7 +48,7 @@
    ```sh 
     kops create cluster --cloud=aws --zones=ap-southeast-1b --name=dev.k8s.valaxy.in --dns-zone=valaxy.in --dns private
     ```
-1. Create kubernetes cluser
+1. Create kubernetes clutser
     ```sh 
       kops update cluster dev.k8s.valaxy.in --yes
      ```
